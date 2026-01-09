@@ -33,15 +33,9 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.logo{
-  .nav-content {
-  justify-content: space-between;
-}
-
 .logo {
-  justify-content: ;
-}
-
+  display: flex;
+  align-items: center;
 }
 .menu {
   display: flex;
@@ -49,11 +43,10 @@ img {
   gap: 24px;
 }
 .menu li a {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px; 
+  font-weight: 700; 
   color: #2d3642;
 }
-
 .btn-btn1 {
   background: #22c55e;
   color: #ffffff;
@@ -70,26 +63,35 @@ img {
   font-weight: 600;
   color: #ffffff;
 }
-
 /* Hero */
 .hero {
+  position: relative;
   background: linear-gradient(180deg, #020617 0%, #020617cc 100%);
   color: #ffffff;
   padding: 100px 24px;
+  overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./Resource/B13-A01-Knowledge-Vault/assets/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: 0;
+}
+
 .hero-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
 }
-.hero-container h1{
-  border: 500px;
-  font-size: 56px;
-  line-height: 1.15;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+
 .hero-actions {
   justify-content: center;
 }
@@ -136,40 +138,64 @@ img {
   margin: auto;
 }
 .notes h2 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 .subtitle {
-  font-size: 14px;
+  font-size: 16px;
   color: #64748b;
   margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card-box {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
-}
-.card {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 32px 24px;
-  max-width: 260px;
-  text-align: left;
-}
-.card img {
-  height: 40px;
-  margin-bottom: 16px;
-}
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-.card p {
-  font-size: 14px;
-  color: #475569;
+   box-shadow:#484c52;
 }
 
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 260px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.08);
+  border: 1px solid #eef1f4;
+}
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: transparent; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  border: 2px solid #ef4444;
+}
+
+.card-icon img {
+  height: 40px;
+  object-fit: contain;
+  opacity: 100%;
+overflow:visible
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.card-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
 /* second Brain */
 .brain {
   padding: 100px 24px;
@@ -280,8 +306,6 @@ height: 384px;
   padding-bottom: 24px;
 }
 
-
-
 .footer-social span {
   display: block;
   margin-bottom: 8px;
@@ -294,13 +318,11 @@ height: 384px;
 }
 .footer-hr {
   border: none;
-  height: 1px;
+  height: 2px;
   background-color: #1e293b;
   max-width: 1200px;
   margin: 24px auto;
 }
-
-
 .copyright {
   text-align: center;
   margin-top: 24px;
